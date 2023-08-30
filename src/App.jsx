@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom";
-import { About, Car, Cars, Contact, Home, Service } from "./pages";
+import { About, Cars, Contact, Home, Service } from "./pages";
 
 function App() {
   return (
@@ -11,7 +11,6 @@ function App() {
     <Route path="/about" element={<About/>} />
     <Route path="/service" element={<Service/>} />
     <Route path="/cars" element={<Cars/>} />
-    <Route path="/cars/?:name" element={<Car />} />
    </Routes>
    </BrowserRouter>
   );

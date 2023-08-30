@@ -3,7 +3,7 @@ import { mainMenuItems } from "../constants";
 
 const Footer = () => {
   return (
-    <AppBar position="fixed" sx={{ bottom: 0, top: "auto"}}>
+    <AppBar position="relative" sx={{ bottom: 0, top: "auto"}}>
       <footer>
         <div className="footer__wrapper">
           <div className="footer__nav-items">
