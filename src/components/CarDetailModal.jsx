@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import { pink } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { Container, HomeIcon } from "../materials";
+import { Container } from "../materials";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import AtmIcon from "@mui/icons-material/Atm";
 import SpeedIcon from "@mui/icons-material/Speed";
-import EngineeringSharpIcon from "@mui/icons-material/EngineeringSharp";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 const style = {
   position: "absolute",
   top: "50%",
@@ -52,19 +52,36 @@ const CarDetailModal = ({ open, handleClose, car }) => {
               justifyContent: "space-evenly",
             }}
           >
-            <Container disableGutters sx={{display: "flex", justifyContent:"space-between"}}>
+            <Container
+              disableGutters
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
               <LocalGasStationIcon color="primary" />
-              <Typography >{car.fuel_type}</Typography>
+              <Typography>{car.fuel_type}</Typography>
             </Container>
-            <Container disableGutters sx={{display: "flex", justifyContent:"space-between"}}>
-            <AtmIcon color="secondary" />
-              <Typography >{car.transmission === "a" ? "automatic" : "manual"}</Typography>
+            <Container
+              disableGutters
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <AtmIcon color="secondary" />
+              <Typography>
+                {car.transmission === "a" ? "automatic" : "manual"}
+              </Typography>
             </Container>
-            <Container disableGutters sx={{display: "flex", justifyContent:"space-between"}}>
-            <SpeedIcon color="action" />
-              <Typography >{car.highway_mpg}miles/gallon</Typography>
+            <Container
+              disableGutters
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <SpeedIcon color="action" />
+              <Typography>{car.highway_mpg}miles/gallon</Typography>
             </Container>
-            <EngineeringSharpIcon sx={{ color: pink[500] }} />
+            <Container
+              disableGutters
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <PeopleAltIcon sx={{ color: pink[500] }} />
+              <Typography>{car.class}</Typography>
+            </Container>
           </Box>
         </Box>
       </Modal>

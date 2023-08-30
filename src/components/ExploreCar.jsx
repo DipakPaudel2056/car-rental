@@ -12,6 +12,7 @@ import SearchBar from "./SearchBar";
 import { useEffect, useState } from "react";
 import { fetchCars } from "../utils/fetchCars";
 import CarDetailModal from "./CarDetailModal";
+import { generateCarImageUrl } from "../utils/getCarImage";
 
 const ExploreCar = () => {
   const [cars, setCars] = useState([]);
@@ -71,10 +72,7 @@ const ExploreCar = () => {
               </div>
               <AspectRatio minHeight="120px" maxHeight="200px">
                 <img
-                  src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
-                  srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
-                  loading="lazy"
-                  alt=""
+                  src={generateCarImageUrl(car)}
                 />
               </AspectRatio>
               <CardContent orientation="horizontal">
@@ -95,7 +93,7 @@ const ExploreCar = () => {
                   </Typography>
                 </div>
                 <Button
-                  onClick={(car)=>handleModalClick(car)}
+                  onClick={()=>handleModalClick(car)}
                   variant="solid"
                   size="md"
                   color="primary"
